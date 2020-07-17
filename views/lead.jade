@@ -1,5 +1,6 @@
 extends layout
 
 block content
-h1 lead 
-p #{lead.email}
+    h1 Lead 
+    p #{lead.email}
+        a(href='/lead/' + lead.id + '/edit') Edit
