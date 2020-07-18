@@ -1,6 +1,9 @@
-extends ../layout
-
-block content
-    form(action='/lead/' + lead.id + '/edit', method="POST")
-        input(name='lead_email', type="email", value=lead.email placeholder= "Enter your email address")
-        button(type="submit") Save
+html(lang='en')
+  include common/header.jade
+  +head('Starter MVP')
+  body
+        form(action='/lead/' + lead.id + '/edit', method="POST")
+            input(name='lead_email', type="email", value=lead.email placeholder= "Enter your email address")
+            button(type="submit") Save
+        include common/footer.jade
+        +footer()
