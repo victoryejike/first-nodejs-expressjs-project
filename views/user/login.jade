@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+  include ../common/header.jade
+  +head('Starter MVP')
+  body
+        header
+            include ../common/navbar.jade
+            +navbar()
+            .container
+                .row
+                .col-sm-12.offset-md-2.col-md-8
+                    .jumbotron
+                        h2.text-center Login
+                        .row
+                            .col-sm-12.col-md-12
+                                form(action="/login", method="POST")
+                                    div.formgroup
+                                        label.small.mb-1.mt-3 Email:
+                                        input(name="email", 
+                                                type="email", 
+                                                value='',
+                                                required=true, 
+                                                placeholder="Enter your email"
+                                        ).form-control
+                                        label.small.mb-1.mt-3 Password:
+                                        input(name="password", 
+                                                type="password", 
+                                                value='',
+                                                required=true, 
+                                                placeholder="New password"
+                                        ).form-control
+                                        button.mt-3.btn.btn-primary(type="submit") Login
+                                        p.mt-2.mb-0
+                                            |  Forgot your password? #[a(href='/#') Reset here]
+                                        p.m-0
+                                            |  Don't have an account? #[a(href='/signup') signup here]
+        include ../common/footer.jade
+        +footer()
