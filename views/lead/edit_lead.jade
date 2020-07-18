@@ -1,9 +1,15 @@
 html(lang='en')
-  include common/header.jade
-  +head('Starter MVP')
+  include ../common/header.jade
+  +head('Edit Lead')
   body
+     header
+        include ../common/navbar.jade
+        +navbar()
+        .container
+            .row.align-items-center
+                .col-md-6.order-md-1.text-center.text-md-left.pr-md-5
         form(action='/lead/' + lead.id + '/edit', method="POST")
             input(name='lead_email', type="email", value=lead.email placeholder= "Enter your email address")
             button(type="submit") Save
-        include common/footer.jade
+        include ../common/footer.jade
         +footer()

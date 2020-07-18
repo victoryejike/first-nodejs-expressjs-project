@@ -22,7 +22,7 @@ exports.show_leads = function (req, res, next) {
   return models.Lead.findAll()
     .then((leads) => {
       // console.log(leads);
-      res.render("landing", { title: "Express", leads: leads });
+      res.render("lead/leads", { title: "Express", leads: leads });
     })
     .catch((err) => {
       console.log(err);
@@ -36,7 +36,7 @@ exports.show_lead = function (req, res, next) {
       id: req.params.lead_id,
     },
   }).then((lead) => {
-    res.render("lead", { lead: lead });
+    res.render("lead/lead", { lead: lead });
   });
 };
 
@@ -71,7 +71,7 @@ exports.delete_lead = function (req, res, next) {
       id: req.params.lead_id,
     },
   }).then((result) => {
-    res.redirect("/leads");
+    res.redirect("lead/leads");
   });
 };
 
