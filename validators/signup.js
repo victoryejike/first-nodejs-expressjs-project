@@ -1,4 +1,5 @@
 let validator = require("validator");
+let models = require("../models");
 
 const validateCreateUserFields = function (errors, req) {
   if (!validator.isEmail(req.body.email)) {

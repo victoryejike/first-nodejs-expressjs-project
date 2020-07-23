@@ -5,7 +5,7 @@ const myPassport = require("../passport_setup")(passport);
 let flash = require("connect-flash");
 const { isEmpty } = require("lodash");
 const { validateUser } = require("../validators/signup");
-const { isEmpty } = require("lodash");
+
 
 exports.show_login = function (req, res, next) {
   res.render("user/login", { formData: {}, errors: {} });
@@ -69,5 +69,5 @@ exports.login = function (req, res, next) {
 exports.logout = function (req, res, next) {
   req.logout();
   req.session.destroy();
-  req.redirect("/");
+  res.redirect("/");
 };
